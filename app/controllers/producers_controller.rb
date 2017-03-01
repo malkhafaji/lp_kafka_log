@@ -5,6 +5,7 @@ class ProducersController < ApplicationController
   ActiveSupport::Notifications.subscribe(/.*\.kafka$/) do |*args|
   $event = ActiveSupport::Notifications::Event.new(*args)
   puts "Received notification `#{$event.name}` with payload: #{$event.payload.inspect}"
+  #call check_message method
   check_message
   end
 
