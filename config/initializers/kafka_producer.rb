@@ -7,7 +7,6 @@ $kafka = Kafka.new(
   logger: Rails.logger,
 )
 
-
 # Set up an asynchronous producer that delivers its buffered messages
 # every ten seconds:
 $kafka_producer = $kafka.async_producer(delivery_threshold: 5,
